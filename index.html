@@ -18,7 +18,6 @@
     :root {
       --primary: #6c5ce7;
       --background: #f0f0f3;
-      --glass: rgba(255, 255, 255, 0.15);
     }
 
     * {
@@ -118,13 +117,11 @@
     }
 
     .project {
-      background: var(--glass);
-      backdrop-filter: blur(12px);
+      background: white;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
-      background-color: white;
     }
 
     .project:hover {
@@ -134,6 +131,21 @@
     .project h3 {
       color: #444;
       margin-bottom: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      height: 400px;
+    }
+
+    .zoomed {
+      transform: scale(0.29);
+      transform-origin: top left;
+      width: 350%;
+      height: 1379px; /* 400 / 0.29 = ~1379 */
+      overflow: hidden;
     }
 
     .contact form {
@@ -193,6 +205,16 @@
       header h1 {
         font-size: 2.2rem;
       }
+
+      iframe {
+        height: 300px;
+      }
+
+      .zoomed {
+        transform: scale(0.5);
+        width: 200%;
+        height: 800px;
+      }
     }
   </style>
 </head>
@@ -206,65 +228,46 @@
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section class="about animate__animated animate__fadeInUp" id="about">
     <h2>About Me</h2>
     <p>
-     Hello! I’m Shilpa, a Software Developer with 4 years of experience in designing, developing, and maintaining applications. While I’ve enjoyed my career in software development, my growing passion for data analytics has inspired me to shift towards this dynamic field.<br>
-
-     I’ve recently immersed myself in data analytics, with a focus on Power BI, SQL, and Python. My goal is to leverage my technical background and problem-solving skills in a Data Analyst role, where I can turn data into actionable insights.<br>
-
-     Here are the tools I'm currently mastering:<br>
-
-    SQL/MySQL<br>
-
-    Excel<br>
-
-    Power BI<br>
-
-    Python<br>
-
-    Excel<br>
-
-	For me, learning is an ongoing journey. I’m motivated by the idea that every challenge is an opportunity to grow, and I’m excited to take on new data-driven challenges in this evolving field.<br>
+      Hello! I’m Shilpa, a Software Developer with 4 years of experience. My growing passion for data analytics has inspired a career shift focused on Power BI, SQL, and Python.<br><br>
+      I aim to turn complex data into actionable insights. Tools I'm proficient in:<br><br>
+      - SQL / MySQL<br>
+      - Excel<br>
+      - Power BI<br>
+      - Python<br>
     </p>
   </section>
 
   <section class="projects animate__animated animate__fadeInUp" id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <div class="project animate__animated animate__zoomIn animate__delay-1s">
+      <div class="project animate__animated animate__zoomIn">
         <h3>Business 360 Analysis for AtliQ Hardwares</h3>
-        <p><section class="projects animate__animated animate__fadeInUp" id="projects">
-		<div style="overflow:auto;">
-       <iframe title="BI360_NEW_V1.2023" width="1000" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiMTc4YWNhNzItNWRkZC00MzUzLThlNmYtZjIzM2E1MTFmNzUxIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" frameborder="0" allowFullScreen="true"></iframe>
-<div class="projects-grid">
-      <div class="project animate__animated animate__zoomIn animate__delay-1s">
-        <h3>Sales Insigths</h3>
-        <p><section class="projects animate__animated animate__fadeInUp" id="projects">
-		<div style="overflow:auto;">
-       <iframe title="Sales_insights" width="1000" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiMjU4OWRhOGYtOTYwNC00YmMyLTgwNDUtZjdjZmM5OGQwMDU4IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" frameborder="0" allowFullScreen="true"></iframe>
-	</section>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMTc4YWNhNzItNWRkZC00MzUzLThlNmYtZjIzM2E1MTFmNzUxIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowFullScreen="true"></iframe>
+      </div>
 
-  <section class="contact animate__animated animate__fadeInUp" id="contact">
-<!--     <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form> -->
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/shilpavarunvivek/"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:shilpajsganiga@gmail.com"><i class="fas fa-envelope"></i></a>
+      <div class="project animate__animated animate__zoomIn">
+        <h3>Sales Insights Dashboard</h3>
+        <div class="zoomed">
+          <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMjU4OWRhOGYtOTYwNC00YmMyLTgwNDUtZjdjZmM5OGQwMDU4IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowFullScreen="true"></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Shilpa. All Rights Reserved.
-  </footer>
+  <section class="certifications animate__animated animate__fadeInUp" id="certifications">
+    <h2>Certifications</h2>
+    <div class="projects-grid">
+      <div class="project animate__animated animate__zoomIn">
+        <h3>Google Data Analytics Certificate</h3>
+        <p>Issued by Coursera | July 2024</p>
+        <a href="https://www.credly.com/" target="_blank">View Certificate</a>
+      </div>
 
-</body>
-</html>
+      <
