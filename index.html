@@ -110,9 +110,9 @@
     }
 
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
       margin-top: 40px;
     }
 
@@ -153,7 +153,7 @@
     /* Project 2 zoomed */
     .zoom-wrapper {
       overflow: hidden;
-      height: 400px; /* visible height */
+      height: 400px;
       position: relative;
     }
 
@@ -161,7 +161,7 @@
       transform: scale(0.25);
       transform-origin: top left;
       width: 400%;
-      height: 1600px; /* 400 / 0.25 */
+      height: 1600px;
       border: none;
       position: absolute;
       top: 0;
@@ -275,7 +275,7 @@
         </div>
       </div>
 
-      <!-- Project 2 with zoom -->
+      <!-- Project 2 (Zoomed 25%) -->
       <div class="project animate__animated animate__zoomIn">
         <h3>Sales Insights Dashboard</h3>
         <div class="zoom-wrapper">
@@ -291,7 +291,9 @@
       <div class="project animate__animated animate__zoomIn">
         <h3>Get Job Ready: Power BI Data Analytics for All Levels 3.0</h3>
         <p>Issued by Codebasics | June 2025</p>
-        <img src="images/CB.png" alt="Get Job Ready Certification" onerror="this.style.display='none';" style="width:100%; border-radius: 10px;" />
+        <img src="CB.png" alt="Certification Image"
+             onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<p style=\'text-align:center;color:red;\'>Image not found</p>');"
+             style="width:100%; border-radius: 10px;" />
       </div>
     </div>
   </section>
