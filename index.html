@@ -133,19 +133,21 @@
       margin-bottom: 10px;
     }
 
-    iframe {
-      width: 100%;
-      border: none;
+    .responsive-iframe {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
       border-radius: 10px;
-      height: 400px;
     }
 
-    .zoomed {
-      transform: scale(0.29);
-      transform-origin: top left;
-      width: 350%;
-      height: 1379px; /* 400 / 0.29 = ~1379 */
-      overflow: hidden;
+    .responsive-iframe iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .contact form {
@@ -205,23 +207,7 @@
       header h1 {
         font-size: 2.2rem;
       }
-
-      iframe {
-        height: 300px;
-      }
-
-      .zoomed {
-        transform: scale(0.5);
-        width: 200%;
-        height: 800px;
-      }
     }
-    .projects-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-top: 40px;
-}
   </style>
 </head>
 <body>
@@ -251,27 +237,26 @@
   </section>
 
   <section class="projects animate__animated animate__fadeInUp" id="projects">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    <div class="project animate__animated animate__zoomIn">
-      <h3>Business 360 Analysis for AtliQ Hardwares</h3>
-      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMTc4YWNhNzItNWRkZC00MzUzLThlNmYtZjIzM2E1MTFmNzUxIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowFullScreen="true"></iframe>
-    </div>
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project animate__animated animate__zoomIn">
+        <h3>Business 360 Analysis for AtliQ Hardwares</h3>
+        <div class="responsive-iframe">
+          <iframe title="Business 360 Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiMTc4YWNhNzItNWRkZC00MzUzLThlNmYtZjIzM2E1MTFmNzUxIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowfullscreen></iframe>
+        </div>
+      </div>
 
-    <div class="project animate__animated animate__zoomIn">
-      <h3>Sales Insights Dashboard</h3>
-      <div class="zoomed">
-        <iframe width="1000" height="1000" src="https://app.powerbi.com/view?r=eyJrIjoiMjU4OWRhOGYtOTYwNC00YmMyLTgwNDUtZjdjZmM5OGQwMDU4IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowFullScreen="true"></iframe>
+      <div class="project animate__animated animate__zoomIn">
+        <h3>Sales Insights Dashboard</h3>
+        <div class="responsive-iframe">
+          <iframe title="Sales Insights Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiMjU4OWRhOGYtOTYwNC00YmMyLTgwNDUtZjdjZmM5OGQwMDU4IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="certifications animate__animated animate__fadeInUp" id="certifications">
     <h2>Certifications</h2>
     <div class="projects-grid">
       <div class="project animate__animated animate__zoomIn">
-        <h3>Get Job Ready: Power BI Data Analytics for All Levels 3.0</h3>
-        <p>Issued by Codebasics | June 2025</p>
-        <img src="CB.png" alt="Get Job Ready: Power BI Data Analytics for All Levels 3.0" style="width:100%; border-radius: 10px;" />
-      </div>
+        <h3>Get Job Ready: Power BI Data
