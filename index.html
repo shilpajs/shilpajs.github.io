@@ -135,7 +135,7 @@
 
     .responsive-iframe {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       border-radius: 10px;
@@ -148,6 +148,24 @@
       width: 100%;
       height: 100%;
       border: none;
+    }
+
+    /* Project 2 zoomed */
+    .zoom-wrapper {
+      overflow: hidden;
+      height: 400px; /* visible height */
+      position: relative;
+    }
+
+    .zoom-wrapper iframe {
+      transform: scale(0.25);
+      transform-origin: top left;
+      width: 400%;
+      height: 1600px; /* 400 / 0.25 */
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .contact form {
@@ -207,6 +225,16 @@
       header h1 {
         font-size: 2.2rem;
       }
+
+      .zoom-wrapper {
+        height: 300px;
+      }
+
+      .zoom-wrapper iframe {
+        transform: scale(0.4);
+        width: 250%;
+        height: 750px;
+      }
     }
   </style>
 </head>
@@ -239,6 +267,7 @@
   <section class="projects animate__animated animate__fadeInUp" id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
+      <!-- Project 1 -->
       <div class="project animate__animated animate__zoomIn">
         <h3>Business 360 Analysis for AtliQ Hardwares</h3>
         <div class="responsive-iframe">
@@ -246,9 +275,10 @@
         </div>
       </div>
 
+      <!-- Project 2 with zoom -->
       <div class="project animate__animated animate__zoomIn">
         <h3>Sales Insights Dashboard</h3>
-        <div class="responsive-iframe">
+        <div class="zoom-wrapper">
           <iframe title="Sales Insights Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiMjU4OWRhOGYtOTYwNC00YmMyLTgwNDUtZjdjZmM5OGQwMDU4IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowfullscreen></iframe>
         </div>
       </div>
@@ -259,4 +289,21 @@
     <h2>Certifications</h2>
     <div class="projects-grid">
       <div class="project animate__animated animate__zoomIn">
-        <h3>Get Job Ready: Power BI Data
+        <h3>Get Job Ready: Power BI Data Analytics for All Levels 3.0</h3>
+        <p>Issued by Codebasics | June 2025</p>
+        <img src="CB.png" alt="Get Job Ready Certification" onerror="this.style.display='none';" style="width:100%; border-radius: 10px;" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="socials">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2025 Shilpa. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
