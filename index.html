@@ -246,6 +246,22 @@
         width: 250%;
         height: 750px;
       }
+      .email-button {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 14px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        }
+
+.email-button:hover {
+  background: #5e50c1; /* or a darker shade of your primary */
+}
     }
   </style>
 </head>
@@ -260,7 +276,7 @@
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
+    <a href="mailto:shilpajsganiga@gmail.com" class="email-button">Contact</a>
   </nav>
 
   <section class="about animate__animated animate__fadeInUp" id="about">
