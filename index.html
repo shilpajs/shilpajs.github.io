@@ -1,42 +1,309 @@
-<style>
-  :root {
-    --primary: #6c5ce7;
-    --background: #f0f0f3;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shilpa | Portfolio</title>
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-  }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(to right, #f9f9f9, #e3e8f0);
-    color: #333;
-    line-height: 1.6;
-  }
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  header {
-    height: 100vh;
-    background: url('images/header-bg.jpg') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    padding: 0 20px;
-    position: relative;
-  }
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-  /* Optional: Add dark overlay for better text contrast */
-  header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Adjust darkness here*
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --background: #f0f0f3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f9f9f9, #e3e8f0);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 20px;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .project {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h3 {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .responsive-iframe {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .responsive-iframe iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Project 2 zoomed */
+    .zoom-wrapper {
+      overflow: hidden;
+      height: 400px;
+      position: relative;
+    }
+
+    .zoom-wrapper iframe {
+      transform: scale(0.25);
+      transform-origin: top left;
+      width: 400%;
+      height: 1600px;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #5e50c1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .socials {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .socials a {
+      color: var(--primary);
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #4e3bb7;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .zoom-wrapper {
+        height: 300px;
+      }
+
+      .zoom-wrapper iframe {
+        transform: scale(0.4);
+        width: 250%;
+        height: 750px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="animate__animated animate__fadeIn">
+    <h1 class="animate__animated animate__fadeInDown animate__delay-1s">Shilpa</h1>
+    <p class="animate__animated animate__fadeInUp animate__delay-2s">Data Analyst | Data-Driven Storytelling | Turning Data into Action</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="about animate__animated animate__fadeInUp" id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I’m Shilpa, a Software Developer with 4 years of experience. My growing passion for data analytics has inspired a career shift focused on Power BI, SQL, and Python.<br><br>
+      I aim to turn complex data into actionable insights. Tools I'm proficient in:<br><br>
+      - SQL / MySQL<br>
+      - Excel<br>
+      - Power BI<br>
+      - Python<br>
+    </p>
+  </section>
+
+  <section class="projects animate__animated animate__fadeInUp" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project animate__animated animate__zoomIn">
+        <h3>Business 360 Analysis for AtliQ Hardwares</h3>
+        <div class="responsive-iframe">
+          <iframe title="Business 360 Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiMTc4YWNhNzItNWRkZC00MzUzLThlNmYtZjIzM2E1MTFmNzUxIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Project 2 (Zoomed 25%) -->
+      <div class="project animate__animated animate__zoomIn">
+        <h3>Sales Insights Dashboard</h3>
+        <div class="zoom-wrapper">
+          <iframe title="Sales Insights Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiMjU4OWRhOGYtOTYwNC00YmMyLTgwNDUtZjdjZmM5OGQwMDU4IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="certifications animate__animated animate__fadeInUp" id="certifications">
+    <h2>Certifications</h2>
+    <div class="projects-grid">
+      <div class="project animate__animated animate__zoomIn">
+        <h3>Get Job Ready: Power BI Data Analytics for All Levels 3.0</h3>
+        <p>Issued by Codebasics | June 2025</p>
+        <img src="images/CB.png" alt="Get Job Ready Certification" onerror="this.style.display='none';" style="width:100%; border-radius: 10px;" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="socials">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2025 Shilpa. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
