@@ -45,6 +45,16 @@
     text-align: center;
     padding: 0 20px;
     }
+    header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2); /* 80% visible background */
+    z-index: 0;
+  }
 
     header h1 {
       font-size: 3rem;
