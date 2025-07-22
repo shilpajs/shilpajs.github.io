@@ -34,36 +34,40 @@
       line-height: 1.6;
     }
 
-  header {
-    height: 100vh;
-    background: url('images/download.jfif') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    padding: 0 20px;
+    header {
+      height: 100vh;
+      background: url('images/download.jfif') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
     }
+
     header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.0); /* 100% visible background */
-    z-index: 0;
-  }
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.0);
+      z-index: 0;
+    }
 
     header h1 {
       font-size: 3rem;
-      margin-top: 20px; 
+      margin-top: 20px;
+      z-index: 1;
     }
 
     header p {
       font-size: 1.2rem;
       margin-top: 10px;
+      z-index: 1;
     }
 
     nav {
@@ -120,6 +124,23 @@
       text-align: center;
     }
 
+    .tool-logos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tool-logos img {
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    .tool-logos img:hover {
+      transform: scale(1.1);
+    }
+
     .projects-grid {
       display: flex;
       flex-direction: column;
@@ -161,7 +182,6 @@
       border: none;
     }
 
-    /* Project 2 zoomed */
     .zoom-wrapper {
       overflow: hidden;
       height: 400px;
@@ -246,6 +266,7 @@
         width: 250%;
         height: 750px;
       }
+
       .email-button {
         display: inline-block;
         background: var(--primary);
@@ -257,11 +278,11 @@
         cursor: pointer;
         text-decoration: none;
         transition: background 0.3s ease;
-        }
+      }
 
-.email-button:hover {
-  background: #5e50c1; /* or a darker shade of your primary */
-}
+      .email-button:hover {
+        background: #5e50c1;
+      }
     }
   </style>
 </head>
@@ -283,60 +304,14 @@
     <h2>About Me</h2>
     <p>
       Hello! I’m Shilpa, a Software Developer with 4 years of experience. My growing passion for data analytics has inspired a career shift focused on Power BI, SQL, and Python.<br><br>
-      I aim to turn complex data into actionable insights. Tools I'm proficient in:<br><br>
-      - SQL / MySQL<br>
-      - Excel<br>
-      - Power BI<br>
-      - Python<br>
+      I aim to turn complex data into actionable insights. Tools I'm proficient in:
     </p>
-  </section>
-
-  <section class="projects animate__animated animate__fadeInUp" id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project animate__animated animate__zoomIn">
-        <h3>Business 360 Analysis for AtliQ Hardwares</h3>
-        <div class="responsive-iframe">
-          <iframe title="Business 360 Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiMTc4YWNhNzItNWRkZC00MzUzLThlNmYtZjIzM2E1MTFmNzUxIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <!-- Project 2 (Zoomed 25%) -->
-      <div class="project animate__animated animate__zoomIn">
-        <h3>Sales Insights Dashboard</h3>
-        <div class="zoom-wrapper">
-          <iframe title="Sales Insights Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiMjU4OWRhOGYtOTYwNC00YmMyLTgwNDUtZjdjZmM5OGQwMDU4IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="project animate__animated animate__zoomIn">
-        <h3>HR Analysis for AtliQ Hardwares</h3>
-        <div class="responsive-iframe">
-          <iframe title="HR_Analysis" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNDRkZWJkNGEtYmY4ZC00MDJiLTg5M2QtZDcwNzYzZDE4ZDA0IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" frameborder="0" allowFullScreen="true"></iframe>
-        </div>
-      </div>
+    <div class="tool-logos">
+      <img src="images/sql.jfif" alt="SQL" title="SQL / MySQL">
+      <img src="images/excel.jfif" alt="Excel" title="Excel">
+      <img src="images/powerbi.jfif" alt="Power BI" title="Power BI">
+      <img src="images/python.jfif" alt="Python" title="Python">
     </div>
   </section>
 
-  <section class="certifications animate__animated animate__fadeInUp" id="certifications">
-    <h2>Certifications</h2>
-    <div class="projects-grid">
-      <div class="project animate__animated animate__zoomIn">
-        <h3>Get Job Ready: Power BI Data Analytics for All Levels 3.0</h3>
-        <p>Issued by Codebasics | June 2025</p>
-        <img src="images/CB.png" alt="Get Job Ready Certification" onerror="this.style.display='none';" style="width:100%; border-radius: 10px;" />
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="socials">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-<!--       <a href="#"><i class="fas fa-envelope"></i></a> -->
-    </div>
-    <p>&copy; 2025 Shilpa. All Rights Reserved.</p>
-  </footer>
-
-</body>
-</html>
+ 
